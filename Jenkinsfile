@@ -3,12 +3,10 @@ pipeline {
    agent any 
     stages {
        
-       stage('Checkout'){
-          steps{
-             
-          sh 'git clone https://github.com/VivekRaveendrn/Maven-Project.git'
-          }
-       }
+        stage("Checkout"){
+    checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'git clone https://github.com/VivekRaveendrn/Maven-Project.git']]])
+    }
+       
        
         stage('Build') {
             steps {
