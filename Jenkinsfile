@@ -33,12 +33,13 @@ pipeline {
        
        stage('Sonarqube') {
    
-     tools {
-        sonarQube 'SonarQube'
-      }
-      steps {
+ steps {
+        script {
+          // requires SonarQube Scanner 2.8+
+          scannerHome = tool 'SonarQube'
+        }
         withSonarQubeEnv('SonarQube') {
-          sh 'sonar-scanner'
+          sh "${scannerHome}/bin/sonar-scanner"
         }
       }
        }
