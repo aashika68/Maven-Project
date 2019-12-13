@@ -57,6 +57,23 @@
                     </execution>
                 </executions>
       </plugin>
+      
+    <plugin>
+  <groupId>com.google.cloud.tools</groupId>
+  <artifactId>jib-maven-plugin</artifactId>
+  <version>1.8.0</version>
+  <configuration>
+    <to>
+      <image>docker.io/aashika68/jib_image</image>
+     <auth>
+      <username>aashika68</username>
+      <password>Welcome@123</password>
+    </auth>
+    </to>
+  </configuration>
+</plugin>
+      
+      
     </plugins>
   </build>
 
