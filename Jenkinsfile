@@ -4,7 +4,6 @@ pipeline {
    tools {
     maven 'Apache Maven 3.6.2'
   }
- 
     stages {
        
        stage('Checkout'){
