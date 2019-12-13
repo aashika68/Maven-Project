@@ -9,7 +9,7 @@ pipeline {
        
        stage('Checkout'){
           steps{
-          
+          sh 'rm -rf Maven-Project'
           sh 'git clone https://github.com/VivekRaveendrn/Maven-Project.git'
           }
        }
